@@ -1,0 +1,37 @@
+service: something-to-read
+plugins:
+  - serverless-python-requirements
+  - serverless-wsgi
+  - serverless-domain-manager
+custom:
+  wsgi:
+    app: app.app
+    packRequirements: false
+  pythonRequirements:
+    dockerizePip: true
+  customDomain:
+    domainName: something.to-rea.de
+    basePath: ''
+    stage: dev
+    createRoute53Record: true
+package:
+  exclude:
+    - node_modules/**
+    - venv/**
+provider:
+  name: aws
+  runtime: python3.6
+  stage: dev
+  region: eu-west-1
+  iamRoleStatements:
+    - Effect: "Allow"
+      Action:
+        - "ses:SendEmail"
+      Resource: "*"
+functions:
+  app:
+    handler: wsgi.handler
+    events:
+      - http: ANY /
+      - http: ANY /thankyou
+      - http: 'ANY {proxy+}'

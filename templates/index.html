@@ -1,0 +1,30 @@
+<html>
+<head>
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/pan.css') }}">
+</head>
+  <div class="test">
+    <div class="overlay"></div>
+      <form method="post"
+            class="table"
+            action="/thankyou">
+        <table class="text">
+          <tr>
+            <td>Name</td>
+            <td><input type="text" name="Name" descr></td><br>
+          </tr>
+          <tr>
+            <td><label>Book</label></td>
+            <td><input type="text" name="Book"></td><br>
+          </tr>
+          <tr>
+            <td><label>Author</label></td>
+            <td><input type="text" name="Author"></td><br>
+          </tr>
+          <tr>
+            <td><input type="submit"></td>
+          </tr>
+        </table>
+      </form>
+    </div>
+  </div>
+</html>
