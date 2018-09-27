@@ -4,12 +4,12 @@ from botocore.exceptions import ClientError
 app = Flask(__name__)
 
 
-def email_sender(name, book, author):
+def email_sender(name, book, author, message):
     SENDER = "cristiano.balducci@gmail.com"
     RECIPIENT = "cristiano.balducci@gmail.com"
     SUBJECT = "Suggestion from " + name
 
-    BODY_TEXT = book + " by " + author
+    BODY_TEXT = book + " by " + author + "\n\n" + message
     AWS_REGION = "eu-west-1"
     CHARSET = "UTF-8"
     client = boto3.client('ses', region_name=AWS_REGION)
@@ -50,7 +50,8 @@ def render_static():
 def render_thanks():
     email_sender(request.form.get('Name'),
                  request.form.get('Book'),
-                 request.form.get('Author'))
+                 request.form.get('Author'),
+                 request.form.get('Message'))
     return render_template('thankyou.html')
 
 
