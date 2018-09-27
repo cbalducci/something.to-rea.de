@@ -6,23 +6,24 @@
     <div class="overlay"></div>
       <form method="post"
             class="table"
-            action="/thankyou">
+            action="/thankyou"
+            id="suggestion">
         <table class="text">
           <tr>
             <td>Name</td>
-            <td><input type="text" name="Name" descr></td><br>
+            <td><textarea name="Name" form="suggestion" maxlength="20"></textarea></td><br>
           </tr>
           <tr>
             <td><label>Book</label></td>
-            <td><input type="text" name="Book"></td><br>
+            <td><textarea name="Book" form="suggestion" maxlength="20"></textarea></td><br>
           </tr>
           <tr>
             <td><label>Author</label></td>
-            <td><input type="text" name="Author"></td><br>
+            <td><textarea name="Author" form="suggestion" maxlength="20"></textarea></td><br>
           </tr>
           <tr>
             <td><label>Message</label></td>
-            <td><input type="text" name="Message"></td><br>
+            <td><textarea name="Message" form="suggestion" rows="5" maxlength="250"></textarea></td><br>
           </tr>
           <tr>
             <td><input type="submit"></td>
