@@ -20,7 +20,7 @@ package:
     - venv/**
 provider:
   name: aws
-  runtime: python3.6
+  runtime: python2.7
   stage: dev
   region: eu-west-1
   iamRoleStatements:
