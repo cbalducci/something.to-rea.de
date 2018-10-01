@@ -1,0 +1,105 @@
+html,body {
+  height:100%;
+  margin:0;
+}
+
+@keyframes stripe-slide {
+    0% { background-position: 0% 0; }
+    100% { background-position: 100% 0; }
+}
+
+@keyframes panning {
+  0% {
+    background-position: 0% 0%;
+  }
+  25% {
+    background-position: 100% 100%;
+  }
+   50% {
+    background-position: 100% 0%;
+  }
+  75% {
+    background-position: 0 100%;
+  }
+  200% {
+    background-position: 0 0;
+  }
+}
+
+.external {
+  position: relative;
+  min-height: 100%;
+  height: 100%;
+  width: 100%;
+  background: black url(https://source.unsplash.com/collection/2589571/1900x1900/);
+  background-size: 200%;
+  animation: panning 150s infinite linear;
+  opacity: 1;
+  display: flex;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+}
+
+.internal {
+  display: flex;
+  flex-direction: column;
+  flex: 30%;
+  background-color: black;
+  opacity: 0.8;
+  position: absolute;
+  z-index: 20;
+  font-family: Courier;
+  font-size: 34px;
+  color: white;
+  font-weight: 100;
+  padding: 10px 40px;
+  -webkit-font-smoothing: antialiased;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+}
+
+.col {
+  flex: 50%;
+  padding: 2px;
+}
+
+.footer {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  opacity: 0.7;
+  padding: 1rem;
+  color: black;
+  font-family: Courier;
+  background-color: #efefef;
+  text-align: center;
+}
+
+.button {
+  display: flex;
+  align-content: center;
+  align-items: center;
+  justify-content: center;
+  background-color: #ccc;
+  border-radius: 3px;
+  padding-top: 10px;
+}
+
+a,
+a:visited {
+  text-decoration: none;
+  color: #000;
+}
+
+textarea {
+  border: 1px solid black;
+  padding-top: 10px;
+}
