@@ -1,34 +1,34 @@
 <html>
 <head>
-  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/pan.css') }}">
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/main.css') }}">
 </head>
-  <div class="test">
-    <div class="overlay"></div>
+  <div class="external">
+    <div class="internal">
       <form method="post"
             class="table"
             action="/thankyou"
             id="suggestion">
-        <table class="text">
-          <tr>
-            <td>Name</td>
-            <td><textarea name="Name" form="suggestion" maxlength="20"></textarea></td><br>
-          </tr>
-          <tr>
-            <td><label>Book</label></td>
-            <td><textarea name="Book" form="suggestion" maxlength="20"></textarea></td><br>
-          </tr>
-          <tr>
-            <td><label>Author</label></td>
-            <td><textarea name="Author" form="suggestion" maxlength="20"></textarea></td><br>
-          </tr>
-          <tr>
-            <td><label>Message</label></td>
-            <td><textarea name="Message" form="suggestion" rows="5" maxlength="250"></textarea></td><br>
-          </tr>
-          <tr>
-            <td padding-left="200px"><button class="btn btn--stripe" type="submit">submit</td>
-          </tr>
-        </table>
+        <div class="row">
+          <div class="col">Name:</div>
+          <div class="col"><textarea name="Name" form="suggestion" rows="1"></textarea>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col">Book:</div>
+          <div class="col"><textarea name="Book" form="suggestion" rows="1"></textarea>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col">Author:</div>
+          <div class="col"><textarea name="Author" form="suggestion" rows="1"></textarea>
+          </div>
+        </div>
+        <div class="row">
+            <div class="col">Message:</div>
+            <div class="col"><textarea name="Message" form="suggestion" rows="4"></textarea>
+            </div>
+        </div>
+        <button class="button" type="submit">Submit</a>
       </form>
     </div>
     <div class="footer">get the source on
