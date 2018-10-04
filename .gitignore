@@ -107,3 +107,6 @@ ENV/
 # node stuff
 package-lock.json
 node_modules
+
+# aws stuff
+.dynamodb
