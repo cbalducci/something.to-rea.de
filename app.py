@@ -41,9 +41,28 @@ def email_sender(name, book, author, message):
         print(response['MessageId'])
 
 
+def write_suggestion(book, author):
+    return True
+
+
+def get_all_suggestions():
+    AWS_REGION = "eu-west-1"
+    client = boto3.client('dynamodb', region_name=AWS_REGION)
+    response = client.scan(TableName='suggestions')
+    return response['Items']
+
+
 @app.route('/')
 def render_static():
     return render_template('index.html')
+
+
+@app.route('/listing', methods=['GET', 'POST'])
+def render_listing():
+    #write_suggestion(request.form.get('Author'),
+    #                 request.form.get('Book'))
+    listing = get_all_suggestions()
+    return render_template('listing.html', listing=listing)
 
 
 @app.route('/thankyou', methods=['GET', 'POST'])
@@ -52,7 +71,7 @@ def render_thanks():
                  request.form.get('Book'),
                  request.form.get('Author'),
                  request.form.get('Message'))
-    return render_template('thankyou.html')
+    return render_template('listing.html')
 
 
 if __name__ == "__main__":
