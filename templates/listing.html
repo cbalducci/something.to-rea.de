@@ -1,0 +1,23 @@
+<html>
+  <head>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/main.css') }}">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Cutive+Mono">
+    <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
+  </head>
+  <div class="external">
+    <div class="internal">
+      <div class="row"><div class="col">Suggestions so far</div></div>
+        {% for e in listing: %}
+      <div class="row listing">
+        <div class="col head"></div>
+        <div class="col">{% print e['Author']['S'] %}</div>
+        <div class="col">{% print e['Title']['S'] %}</div>
+      </div>
+      {% endfor %}
+    </div>
+    <div class="footer">get the source on
+      <a href="https://github.com/cbalducci/something.to-rea.de">
+        github
+      </a></div>
+  </div>
+</html>
