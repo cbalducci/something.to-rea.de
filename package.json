@@ -15,6 +15,7 @@
     "inquirer": "^3.2.3",
     "js-yaml": "^3.9.1",
     "serverless-domain-manager": "^2.6.5",
+    "serverless-dynamodb-local": "^0.2.35",
     "serverless-python-requirements": "^4.2.4",
     "serverless-wsgi": "^1.5.1"
   }
