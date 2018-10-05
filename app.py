@@ -49,6 +49,15 @@ def get_all_suggestions():
     AWS_REGION = "eu-west-1"
     client = boto3.client('dynamodb', region_name=AWS_REGION)
     response = client.scan(TableName='suggestions')
+    '''
+    SAMPLE DATA
+    el1 = {'Title': {'S': 'Life on the edge'},
+           'Author': {'S': 'Cristiano Balducci'}}
+    el2 = {'Title': {'S': 'Meditations'},
+           'Author': {'S': 'Marcus Aurelius'}}
+    list = [el1, el2, el1, el2 ]
+    response = {'Items': list}
+    '''
     return response['Items']
 
 
@@ -59,10 +68,12 @@ def render_static():
 
 @app.route('/listing', methods=['GET', 'POST'])
 def render_listing():
-    #write_suggestion(request.form.get('Author'),
-    #                 request.form.get('Book'))
+    # FIXME
+    # 1- Write the sugestion to the database
+    # 2- Send the email
     listing = get_all_suggestions()
-    return render_template('listing.html', listing=listing)
+    c = 0
+    return render_template('listing.html', listing=listing, c=c)
 
 
 @app.route('/thankyou', methods=['GET', 'POST'])
