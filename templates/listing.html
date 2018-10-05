@@ -6,10 +6,10 @@
   </head>
   <div class="external">
     <div class="internal">
-      <div class="row"><div class="col">Suggestions so far</div></div>
+      <div class="row"><div class="col">Suggestions so far </div></div>
         {% for e in listing: %}
       <div class="row listing">
-        <div class="col head"></div>
+        <div class="head">*</div>
         <div class="col">{% print e['Author']['S'] %}</div>
         <div class="col">{% print e['Title']['S'] %}</div>
       </div>

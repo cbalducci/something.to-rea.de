@@ -66,6 +66,14 @@ html,body {
   justify-content: center;
 }
 
+.listing {
+  font-size: 20px;
+  border: 0px;
+  border-bottom: 1px;
+  border-style: solid;
+  border-color: white;
+}
+
 .col {
   flex: 50%;
   padding: 2px;
@@ -73,14 +81,7 @@ html,body {
 }
 
 .head {
-  flex: 5%;
-}
-.listing {
-  font-size: 20px;
-  border: 0px;
-  border-bottom: 1px;
-  border-style: solid;
-  border-color: white;
+  width: 20px;
 }
 
 .footer {
