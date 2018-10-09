@@ -89,12 +89,24 @@ html,body {
   right: 0;
   bottom: 0;
   left: 0;
-  opacity: 0.7;
-  padding: 1rem;
+  opacity: 0.2;
+  padding: 5px;
   color: black;
   font-family: Courier;
   background-color: #efefef;
   text-align: center;
+  transition: opacity .5s ease-out;
+  -moz-transition: opacity .5s ease-out;
+  -webkit-transition: opacity .5s ease-out;
+  -o-transition: opacity .5s ease-out;
+}
+
+.footer:hover {
+  opacity: 1;
+  transition: opacity .5s ease-out;
+  -moz-transition: opacity .5s ease-out;
+  -webkit-transition: opacity .5s ease-out;
+  -o-transition: opacity .5s ease-out;
 }
 
 .button {
