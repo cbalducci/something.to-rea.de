@@ -80,6 +80,11 @@ html,body {
   min-width: 200px;
 }
 
+.what {
+  font-size: 25px;
+  padding-bottom: 15px;
+}
+
 .head {
   width: 20px;
 }
