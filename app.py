@@ -82,7 +82,7 @@ def render_thanks():
                  request.form.get('Book'),
                  request.form.get('Author'),
                  request.form.get('Message'))
-    return render_template('listing.html')
+    return render_template('thankyou.html')
 
 
 if __name__ == "__main__":
